@@ -1,0 +1,96 @@
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.registration-card {
+    background-color: #fff;
+    width: 450px;
+    padding: 20px;
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-title {
+    background-color: #0400ff;
+    color: #fff;
+    padding: 20px;
+    border-top-left-radius: 1px;
+    border-top-right-radius: 1px;
+    margin: -20px -20px 20px -20px;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    margin-left: 40px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.name-input::before {
+    content: url('/img/name.svg');
+    position: absolute;
+    left: -45px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.email-input::before {
+    content: url('/img/email.svg');
+    position: absolute;
+    left: -45px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.password-input::before {
+    content: url('/img/password.svg');
+    position: absolute;
+    left: -45px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.input-group label {
+    width: 40%;
+    font-size: 20px;
+    color: #706d6d;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+}
+
+.error__message {
+    color: red;
+}
+
+.button-group {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.register-button {
+    background-color: #0400ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-button:hover {
+    background-color: #007bff;
+}

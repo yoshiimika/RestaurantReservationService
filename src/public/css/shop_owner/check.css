@@ -1,0 +1,25 @@
+/* styles.css */
+.reservation-confirmation {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.header__title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.reservation-details__item {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.reservation-details__value {
+    font-weight: bold;
+    color: #333;
+}

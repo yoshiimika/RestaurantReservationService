@@ -1,0 +1,72 @@
+.create-admin-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.create-admin-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form__group-title {
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.form__group-content {
+    width: 800px;
+    text-align: left;
+}
+
+.form__label--required {
+    color: red;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--name input,
+.form__input--email input,
+.form__input--password input,
+.form__input--password_confirmation input,
+.form__input--shop select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    appearance: none;
+    height: 40px;
+}
+
+.form__button {
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 20%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #0400ff;
+    color: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,64 @@
+.shop_owners__header {
+    display: flex;
+    justify-content: center;
+}
+
+.shop_owners__form {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    width: 80%;
+    margin: auto;
+}
+
+.shop_owners__table-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.shop_owners__table {
+    width: 100%;
+}
+
+.shop_owners__header-item,
+.shop_owners__data-item {
+    width: 20%;
+    text-align: left;
+    padding-left: 5%;
+    height: 70px;
+    border-top: 1px solid gray;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background-color: #0400ff;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #929292;
+    color: white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    opacity: 0.8;
+}

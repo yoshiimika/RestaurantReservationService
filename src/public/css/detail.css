@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 6%;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 45%;
+}
+
+.right-section {
+    width: 45%;
+}
+
+.shop-header {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    margin-right: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #707070;
+}
+
+.shop-name {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.shop-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.shop-tags {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.shop-description {
+    font-size: 14px;
+    color: #333;
+}
+
+.reservation-form {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 20px 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.reservation-form h2 {
+    margin-top: 0;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.reservation-summary {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.reservation-summary-title{
+    display: inline-block;
+    width: 80px;
+}
+
+.reserve-button {
+    width: 100%;
+    background-color: #0400ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.reserve-button:hover {
+    background-color: #007bff;
+}

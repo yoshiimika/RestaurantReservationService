@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.review-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 6%;
+}
+
+.shop-info {
+    width: 45%;
+}
+
+.shop-header {
+    display: flex;
+    align-items: center;
+}
+
+.back-button {
+    margin-right: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #707070;
+}
+
+.shop-name {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.shop-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.shop-tags {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.shop-description {
+    font-size: 14px;
+    color: #333;
+}
+
+.review-create {
+    width: 45%;
+    height: 50%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 20px 60px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.review-create h2 {
+    margin-top: 0;
+}
+
+.form__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form__group-title {
+    width: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.form__group-content {
+    width: 800px;
+    text-align: left;
+}
+
+.form__label--required {
+    color: red;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--rating select {
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    appearance: none;
+    height: 40px;
+}
+
+.form__input--comment textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #dad2d2;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    appearance: none;
+    height: 180px;
+}
+
+.create-button {
+    width: 100%;
+    background-color: #0400ff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.create-button:hover {
+    background-color: #007bff;
+}

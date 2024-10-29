@@ -1,0 +1,184 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.mypage-header {
+    padding-left: 47.5%;
+}
+
+.mypage-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 100px;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+.right-section {
+    width: 50%;
+}
+
+.reservation-card {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.reservation-card h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: lighter;
+}
+
+.reservation-summary-title {
+    display: inline-block;
+    margin-right: 40px;
+    width: 80px;
+}
+
+.edit-button {
+    background-color: #0400ff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #007bff;
+}
+
+.cancel-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.review-button {
+    background-color: #0400ff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-button:hover {
+    background-color: #007bff;
+}
+
+.review-card {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+.review-card h4 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-weight: lighter;
+}
+
+.review-summary-title {
+    display: inline-block;
+    margin-right: 40px;
+    width: 80px;
+}
+
+.favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.favorite-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 45%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.favorite-item:hover {
+    transform: scale(1.02);
+}
+
+.favorite-item img {
+    width: 100%;
+    height: auto;
+}
+
+.favorite-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.favorite-info h2 {
+    font-size: 20px;
+    color: #333;
+}
+
+.favorite-info p {
+    color: #777;
+    margin: 10px 0;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: #0400ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.details-button:hover {
+    background-color: #007bff;
+}
+
+.favorite-form {
+    display: inline;
+}
+
+.favorite-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.favorite-button.active {
+    font-size: 30px;
+    color: #ff0000;
+}

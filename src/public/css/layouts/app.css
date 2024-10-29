@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    display: flex;
+    align-items: center;
+    padding: 2% 6%;
+}
+
+.logo {
+    font-size: 30px;
+    color: #0400ff;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.drawer_hidden {
+    display: none;
+}
+
+.drawer_open {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+    background: #0400ff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px #707070;
+}
+
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+}
+
+.drawer_open span:before {
+    bottom: 8px;
+}
+
+.drawer_open span:after {
+    top: 8px;
+}
+
+#drawer_input:checked~.drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+#drawer_input:checked~.drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked~.drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.nav_content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    z-index: 99;
+    background: #fff;
+    transition: .5s;
+}
+
+.nav_list {
+    list-style: none;
+    text-align: center;
+    padding: 20%;
+}
+
+.nav_item {
+    margin: 20px;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: #0400ff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav_item button {
+    text-decoration: none;
+    color: #0400ff;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#drawer_input:checked~.nav_content {
+    left: 0;
+}
+
+.filter-bar {
+    margin-left: auto;
+}
+
+.search-container {
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    align-items: center;
+}
+
+.search-select {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    flex: 1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    pointer-events: all;
+}
+
+.search-input {
+    position: relative;
+    display: inline-block;
+    padding-left: 35px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    flex: 2;
+}
