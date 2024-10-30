@@ -162,18 +162,22 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     ->name('store');
     Route::get('/done', [AdminController::class, 'done'])
     ->name('done');
-    Route::get('/edit/{shopOwner}', [AdminController::class, 'edit'])
-    ->name('edit');
-    Route::post('/update-confirm/{shopOwner}', [AdminController::class, 'updateConfirm'])
-    ->name('update-confirm');
-    Route::patch('/update/{shopOwner}', [AdminController::class, 'update'])
-    ->name('update');
-    Route::get('/update-done', [AdminController::class, 'updateDone'])
-    ->name('update-done');
-    Route::post('/delete-confirm/{shopOwner}', [AdminController::class, 'deleteConfirm'])
-    ->name('delete-confirm');
-    Route::delete('/delete/{shopOwner}', [AdminController::class, 'delete'])
-    ->name('delete');
+    Route::prefix('edit/{shopOwner}')->name('edit.')->group(function () {
+        Route::get('/', [AdminController::class, 'edit'])
+        ->name('edit');
+        Route::post('/confirm', [AdminController::class, 'updateConfirm'])
+        ->name('confirm');
+        Route::patch('/update', [AdminController::class, 'update'])
+        ->name('update');
+    });
+    Route::get('/edit-done', [AdminController::class, 'updateDone'])
+    ->name('edit.done');
+    Route::prefix('delete/{shopOwner}')->name('delete.')->group(function () {
+        Route::post('/confirm', [AdminController::class, 'deleteConfirm'])
+        ->name('confirm');
+        Route::delete('/', [AdminController::class, 'delete'])
+        ->name('delete');
+    });
     Route::get('/delete-done', [AdminController::class, 'deleteDone'])
-    ->name('delete-done');
+    ->name('delete.done');
 });

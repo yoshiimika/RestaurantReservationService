@@ -26,11 +26,11 @@
                 <td class="shop_owners__data-item">{{ $shopOwner->shop ? $shopOwner->shop->name : '店舗無し' }}</td>
                 <td class="shop_owners__data-item">
                     <div class="action-buttons">
-                        <form action="{{ route('admin.edit', $shopOwner->id) }}" method="GET">
+                        <form action="{{ route('admin.edit.edit', $shopOwner->id) }}" method="GET">
                             @csrf
                             <button type="submit" class="edit-btn">編集</button>
                         </form>
-                        <form action="{{ route('admin.delete-confirm', $shopOwner->id) }}" method="POST">
+                        <form action="{{ route('admin.delete.confirm', $shopOwner->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="delete-btn">削除</button>
                         </form>

@@ -64,7 +64,7 @@ class AdminController extends Controller
     public function edit(User $shopOwner)
     {
         $shops = Shop::all();
-        return view('admin.edit', compact('shopOwner', 'shops'));
+        return view('admin.edit.edit', compact('shopOwner', 'shops'));
     }
 
     public function updateConfirm(UpdateShopOwnerRequest $request, User $shopOwner)
@@ -78,13 +78,13 @@ class AdminController extends Controller
             'current_password' => $request->input('current_password'),
             'new_password' => $request->input('new_password'),
         ];
-        return view('admin.edit-confirm', $data);
+        return view('admin.edit.confirm', $data);
     }
 
     public function update(UpdateShopOwnerRequest $request, User $shopOwner)
     {
         if ($request->has('back')) {
-            return redirect()->route('admin.edit', $shopOwner->id)->withInput();
+            return redirect()->route('admin.edit.edit', $shopOwner->id)->withInput();
         }
         if ($request->filled('new_password')) {
             $shopOwner->password = Hash::make($request->new_password);
@@ -93,28 +93,28 @@ class AdminController extends Controller
         $shopOwner->email = $request->email;
         $shopOwner->shop_id = $request->shop_id ?: null;
         $shopOwner->save();
-        return redirect()->route('admin.update-done');
+        return redirect()->route('admin.edit.done');
     }
 
 
     public function updateDone()
     {
-        return view('admin.edit-done');
+        return view('admin.edit.done');
     }
 
     public function deleteConfirm(User $shopOwner)
     {
-        return view('admin.delete-confirm', compact('shopOwner'));
+        return view('admin.delete.confirm', compact('shopOwner'));
     }
 
     public function delete(User $shopOwner)
     {
         $shopOwner->delete();
-        return redirect()->route('admin.delete-done');
+        return redirect()->route('admin.delete.done');
     }
 
     public function deleteDone()
     {
-        return view('admin.delete-done');
+        return view('admin.delete.done');
     }
 }

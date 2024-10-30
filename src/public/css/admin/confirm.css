@@ -7,7 +7,7 @@
 .confirm-card {
     background-color: #fff;
     width: 500px;
-    padding: 100px 10px;
+    padding: 100px 50px;
     border-radius: 1px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -20,18 +20,24 @@
     font-weight: lighter;
 }
 
-.shop_owner-summary {
-    text-align: left;
-    margin: 20px auto;
-    width: fit-content;
+.shop_owner-information__group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
 }
 
-.shop_owner-item {
-    text-align: left;
-    margin: 5px 0;
+.shop_owner-information__group-title {
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 
-.button-group {
+.shop_owner-information__group-content {
+    width: 100%;
+    text-align: left;
+}
+
+.button__group {
     display: flex;
     justify-content: center;
     gap: 10px;

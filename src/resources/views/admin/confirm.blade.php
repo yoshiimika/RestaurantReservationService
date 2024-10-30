@@ -8,17 +8,27 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">店舗代表者作成内容を確認</h2>
-        <div class="shop_owner-information-summary">
-            <p class="shop_owner-information-item">名前: {{ $name }}</p>
-            <p class="shop_owner-information-item">メールアドレス: {{ $email }}</p>
-            <p class="shop_owner-information-item">パスワード:
+        <div class="shop_owner-information__group">
+            <div class="shop_owner-information__group-title">名前</div>
+            <div class="shop_owner-information__group-content">{{ $name }}</div>
+        </div>
+        <div class="shop_owner-information__group">
+            <div class="shop_owner-information__group-title">メールアドレス</div>
+            <div class="shop_owner-information__group-content">{{ $email }}</div>
+        </div>
+        <div class="shop_owner-information__group">
+            <div class="shop_owner-information__group-title">パスワード</div>
+            <div class="shop_owner-information__group-content">
                 <span id="password-field" style="display: none;">{{ $password }}</span>
                 <span id="password-masked">{{ str_repeat('●', strlen($password)) }}</span>
-                <button type="button" id="toggle-password">パスワードを表示する</button>
-            </p>
-            <p class="shop_owner-information-item">店舗: {{ $shop_name }}</p>
+                <button type="button" id="toggle-password">パスワード表示</button>
+            </div>
         </div>
-        <div class="button-group">
+        <div class="shop_owner-information__group">
+            <div class="shop_owner-information__group-title">店舗</div>
+            <div class="shop_owner-information__group-content">{{ $shop_name }}</div>
+        </div>
+        <div class="button__group">
             <form action="{{ route('admin.store') }}" method="POST" class="shop_owner-information-form">
                 @csrf
                 <input type="hidden" name="name" value="{{ $name }}">
