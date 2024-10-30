@@ -102,7 +102,7 @@ Route::middleware(['auth', 'verified', 'role:user'])->prefix('reviews')->name('r
 });
 
 Route::middleware(['auth', 'verified', 'role:user'])->prefix('payment')->name('payment.')->group(function () {
-    Route::get('/input-amount', [PaymentController::class, 'showSelectAmount'])
+    Route::get('/input-amount', [PaymentController::class, 'showAmountInputForm'])
     ->name('input-amount');
     Route::get('/checkout', [PaymentController::class, 'checkout'])
     ->name('checkout');

@@ -19,7 +19,7 @@ class CreateShopsTable extends Migration
             $table->foreignId('area_id')->constrained()->cascadeOnDelete();
             $table->foreignId('genre_id')->constrained()->cascadeOnDelete();
             $table->string('image_url', 255)->nullable();
-            $table->text('outline', 255)->nullable();
+            $table->text('outline')->nullable();
             $table->decimal('avg_rating', 2, 1)->default(0.0)->nullable();
             $table->timestamps();
         });

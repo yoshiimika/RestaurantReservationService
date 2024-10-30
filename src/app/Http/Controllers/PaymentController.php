@@ -8,6 +8,11 @@ use Stripe\Checkout\Session;
 
 class PaymentController extends Controller
 {
+    public function showAmountInputForm()
+    {
+        return view('payment.input-amount');
+    }
+
     public function checkout(CheckoutRequest $request)
     {
         Stripe::setApiKey(config('services.stripe.secret'));
@@ -39,10 +44,5 @@ class PaymentController extends Controller
     public function cancel()
     {
         return view('payment.cancel');
-    }
-
-    public function showSelectAmount()
-    {
-        return view('payment.input-amount');
     }
 }
