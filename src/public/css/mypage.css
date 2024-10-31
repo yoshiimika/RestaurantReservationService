@@ -1,10 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 .mypage-header {
     padding-left: 47.5%;
 }
@@ -12,7 +5,7 @@ body {
 .mypage-container {
     display: flex;
     justify-content: space-around;
-    padding: 0px 100px;
+    padding: 0% 5%;
 }
 
 .left-section {
@@ -34,7 +27,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
     margin-bottom: 20px;
-    width: 90%;
+    width: 100%;
 }
 
 .reservation-card h4 {
@@ -181,4 +174,35 @@ body {
 .favorite-button.active {
     font-size: 30px;
     color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+    .mypage-header {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .mypage-container {
+        flex-direction: column;
+        padding: 0% 5%;
+        align-items: center;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
+
+    .reservation-card,
+    .review-card {
+        width: 100%;
+    }
+
+    .favorites-list {
+        flex-direction: column;
+    }
+
+    .favorite-item {
+        width: 100%;
+    }
 }

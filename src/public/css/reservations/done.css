@@ -34,3 +34,14 @@
 .back-button:hover {
     background-color: #007bff;
 }
+
+@media screen and (max-width: 768px) {
+    .done-card {
+        width: 300px;
+        padding: 50px 30px;
+    }
+
+    .done-title {
+        font-size: 18px;
+    }
+}

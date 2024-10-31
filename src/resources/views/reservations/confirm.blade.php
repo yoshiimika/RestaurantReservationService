@@ -7,7 +7,7 @@
 @section('content')
 <div class="confirm-container">
     <div class="confirm-card">
-        <h2 class="confirm-title">予約内容確認</h2>
+        <h2 class="confirm-title">予約内容の確認</h2>
         <div class="reservation__group">
             <div class="reservation__group-title">店舗名</div>
             <div class="reservation__group-content">{{ $shop->name }}</div>

@@ -27,14 +27,16 @@
 }
 
 .reservation__group-title {
-    width: 300px;
+    width: 40%;
     display: flex;
     align-items: center;
+    font-size: 18px;
 }
 
 .reservation__group-content {
-    width: 800px;
+    width: 100%;
     text-align: left;
+    font-size: 18px;
 }
 
 .button__group {
@@ -72,4 +74,23 @@
 
 .back-button:hover {
     background-color: #c5c5c5;
+}
+
+@media screen and (max-width: 768px) {
+    .confirm-card {
+        width: 300px;
+        padding: 50px 30px;
+    }
+
+    .confirm-title {
+        font-size: 20px;
+    }
+
+    .reservation__group-title {
+        font-size: 15px;
+    }
+
+    .reservation__group-content {
+        font-size: 15px;
+    }
 }

@@ -51,15 +51,23 @@
             @csrf
                 <div class="search-container">
                     <select class="search-select" name="area_id">
-                        <option value="all" {{ request('area_id') == 'all' ? 'selected' : '' }}>All area</option>
+                        <option value="all" {{ request('area_id') == 'all' ? 'selected' : '' }}>
+                            All area
+                        </option>
                         @foreach($areas as $area)
-                        <option value="{{ $area->id }}" {{ request('area_id') == $area->id ? 'selected' : '' }}>{{ $area->name }}</option>
+                        <option value="{{ $area->id }}" {{ request('area_id') == $area->id ? 'selected' : '' }}>
+                            {{ $area->name }}
+                        </option>
                         @endforeach
                     </select>
                     <select class="search-select" name="genre_id">
-                        <option value="all" {{ request('genre_id') == 'all' ? 'selected' : '' }}>All genre</option>
+                        <option value="all" {{ request('genre_id') == 'all' ? 'selected' : '' }}>
+                            All genre
+                        </option>
                         @foreach($genres as $genre)
-                        <option value="{{ $genre->id }}" {{ request('genre_id') == $genre->id ? 'selected' : '' }}>{{$genre->name}}</option>
+                        <option value="{{ $genre->id }}" {{ request('genre_id') == $genre->id ? 'selected' : '' }}>
+                            {{$genre->name}}
+                        </option>
                         @endforeach
                     </select>
                     <div class="search-input">

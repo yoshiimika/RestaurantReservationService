@@ -1,14 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 .detail-container {
     display: flex;
     justify-content: space-between;
-    margin: 2% 6%;
+    margin: 2% 5%;
 }
 
 .left-section {
@@ -120,4 +113,15 @@ body {
 
 .reserve-button:hover {
     background-color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .detail-container {
+        flex-direction: column;
+    }
+
+    .left-section,
+    .right-section {
+        width: 100%;
+    }
 }

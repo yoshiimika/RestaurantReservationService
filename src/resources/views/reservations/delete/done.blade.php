@@ -8,8 +8,8 @@
 <div class="done-container">
     <div class="done-card">
         <h2 class="done-title">予約をキャンセルしました</h2>
-        <p>予約のキャンセルが完了しました。<br>
-            またのご利用をお待ちしております。</p>
+        <p>キャンセルが完了しました。<br>
+            又のご利用をお待ちしています。</p>
         <a href="{{ route('users.mypage') }}" class="back-button">マイページに戻る</a>
     </div>
 </div>

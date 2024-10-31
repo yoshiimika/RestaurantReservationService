@@ -20,6 +20,10 @@
     font-weight: lighter;
 }
 
+.verify-email__message p {
+    font-size: 18px;
+}
+
 .verify-email__button-group {
     display: flex;
     justify-content: center;
@@ -40,4 +44,19 @@
 
 .verify-email__button:hover {
     background-color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .verify-email__card {
+        width: 80vw;
+        padding: 50px 10px;
+    }
+
+    .verify-email__title{
+        font-size: 20px;
+    }
+
+    .verify-email__message p{
+        font-size: 15px;
+    }
 }

@@ -7,7 +7,7 @@
 @section('content')
 <div class="confirm-container">
     <div class="confirm-card">
-        <h2 class="confirm-title">この予約をキャンセルしますか？</h2>
+        <h2 class="confirm-title">キャンセル内容の確認</h2>
         <div class="reservation__group">
             <div class="reservation__group-title">予約日</div>
             <div class="reservation__group-content">{{ $reservation->date }}</div>

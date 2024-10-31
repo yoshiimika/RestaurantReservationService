@@ -1,14 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
 }
 
 .main-header {
     display: flex;
     align-items: center;
-    padding: 2% 6%;
+    padding: 2% 5%;
 }
 
 .logo {
@@ -16,4 +13,11 @@ body {
     color: #0400ff;
     font-weight: bold;
     margin-left: 2%;
+}
+
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 24px;
+        margin-left: 0;
+    }
 }

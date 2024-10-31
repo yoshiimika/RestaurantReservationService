@@ -9,14 +9,14 @@
     <div class="shop-list">
         @foreach($shops as $shop)
         <div class="shop-item">
-            <img src="{{ asset($shop->image_url) }}" alt="{{ $shop->name }}">
+            <img class="shop-image" src="{{ asset($shop->image_url) }}" alt="{{ $shop->name }}">
             <div class="shop-info">
-                <h2>{{ $shop->name }}</h2>
-                <p>#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
-                <a href="{{route('shops.detail',['shop_id' => $shop->id,'from' => 'index'])}}" class="details-button">詳しくみる</a>
-                <form method="POST" action="{{ route('favorite.toggle', $shop->id) }}" class="favorite-form">
+                <h2 class="shop-name">{{ $shop->name }}</h2>
+                <p class="shop-tags">#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
+                <a class="details-button" href="{{route('shops.detail',['shop_id' => $shop->id,'from' => 'index'])}}">詳しくみる</a>
+                <form class="favorite-form" action="{{ route('favorite.toggle', $shop->id) }}" method="POST">
                     @csrf
-                    <button type="submit" class="favorite-button">
+                    <button class="favorite-button" type="submit">
                         @if($shop->is_favorite)
                             <span class="favorite-icon active">❤︎</span>
                         @else
