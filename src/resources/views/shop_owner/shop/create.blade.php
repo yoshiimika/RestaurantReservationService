@@ -7,9 +7,11 @@
 @section('content')
 <div class="create-shop-form__content">
     <div class="create-shop-form__heading">
-        <h2>店舗の作成</h2>
+        <h2 class="create-shop-form__heading-title">
+            店舗の作成
+        </h2>
     </div>
-    <form class="form" action="{{ route('shop_owner.shop.confirm') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop_owner.shop.confirm') }}" class="form" enctype="multipart/form-data" method="POST">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -18,7 +20,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="name" value="{{ old('name') }}">
+                    <input name="name" type="text" value="{{ old('name') }}">
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -79,12 +81,12 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--image">
-                    <input type="file" name="shop_image">
+                    <input name="shop_image" type="file">
                 </div>
                 @if(session('shop_data.image'))
                     <div class="shop-image-preview">
                         <p>アップロードされた画像:</p>
-                        <img src="{{ asset(session('shop_data.image')) }}" alt="店舗画像" style="width: 150px;">
+                        <img alt="店舗画像" src="{{ asset(session('shop_data.image')) }}" style="width: 150px;">
                     </div>
                 @endif
                 <div class="form__error">
@@ -110,7 +112,9 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
+            <button class="form__button-submit" type="submit">
+                確認画面
+            </button>
         </div>
     </form>
 </div>

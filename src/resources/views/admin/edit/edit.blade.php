@@ -7,9 +7,11 @@
 @section('content')
 <div class="edit-shop_owner-form__content">
     <div class="edit-shop_owner-form__heading">
-        <h2>{{ $shopOwner->name }} の情報を編集</h2>
+        <h2 class="edit-shop_owner-form__title">
+            {{ $shopOwner->name }} の情報を編集
+        </h2>
     </div>
-    <form class="form" action="{{ route('admin.edit.confirm', ['shopOwner' => $shopOwner->id]) }}" method="post">
+    <form action="{{ route('admin.edit.confirm', ['shopOwner' => $shopOwner->id]) }}" class="form" method="POST">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -18,7 +20,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="name" value="{{ old('name', $shopOwner->name) }}">
+                    <input name="name" type="text" value="{{ old('name', $shopOwner->name) }}">
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -34,7 +36,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--email">
-                    <input type="email" name="email" value="{{ old('email', $shopOwner->email) }}">
+                    <input name="email" type="email" value="{{ old('email', $shopOwner->email) }}">
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -50,7 +52,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--password">
-                    <input type="password" name="current_password">
+                    <input name="current_password" type="password">
                 </div>
                 <div class="form__error">
                     @error('current_password')
@@ -65,7 +67,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--password">
-                    <input type="password" name="new_password">
+                    <input name="new_password" type="password">
                 </div>
                 <div class="form__error">
                     @error('new_password')
@@ -74,14 +76,13 @@
                 </div>
             </div>
         </div>
-
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">新しいパスワード（確認）</span>
             </div>
             <div class="form__group-content">
                 <div class="form__input--password">
-                    <input type="password" name="new_password_confirmation">
+                    <input name="new_password_confirmation" type="password">
                 </div>
                 <div class="form__error">
                     @error('new_password_confirmation')
@@ -116,7 +117,9 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
+            <button class="form__button-submit" type="submit">
+                確認画面
+            </button>
         </div>
     </form>
 </div>

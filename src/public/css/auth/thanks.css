@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-.thanks-card h2 {
+.thanks-title {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
@@ -40,7 +40,7 @@
         padding: 50px 10px;
     }
 
-    .thanks-card h2 {
+    .thanks-title {
         font-size: 20px;
     }
 }

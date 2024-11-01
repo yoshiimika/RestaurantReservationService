@@ -8,17 +8,27 @@
 <div class="review-container">
     <div class="shop-info">
         <div class="shop-header">
-            <a href="{{ route('users.mypage') }}" class="back-button"><</a>
-            <h1 class="shop-name">{{ $shop->name }}</h1>
+            <a class="back-button" href="{{ route('users.mypage') }}">
+                <
+            </a>
+            <h1 class="shop-name">
+                {{ $shop->name }}
+            </h1>
         </div>
-        <img src="{{ asset($shop->image_url) }}" alt="{{ $shop->name }}" class="shop-image">
-        <p class="shop-tags">#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
-        <p class="shop-description">{{ $shop->outline }}</p>
+        <img alt="{{ $shop->name }}" class="shop-image" src="{{ asset($shop->image_url) }}">
+        <p class="shop-tags">
+            #{{ $shop->area->name }} #{{ $shop->genre->name }}
+        </p>
+        <p class="shop-description">
+            {{ $shop->outline }}
+        </p>
     </div>
     <div class="review-create">
-        <h2>{{ $shop->name }}にレビューを投稿する</h2>
+        <h2 class="review-create-title">
+            {{ $shop->name }}にレビューを投稿する
+        </h2>
         <form action="{{ route('reviews.confirm', $shop->id) }}" method="POST">
-            @csrf
+        @csrf
             <div class="form__group">
                 <div class="form__group-title">
                     <span class="form__label--item">評価(1-5)</span>
@@ -56,7 +66,9 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="create-button">投稿内容を確認する</button>
+            <button class="create-button" type="submit">
+                投稿内容を確認する
+            </button>
         </form>
     </div>
 </div>

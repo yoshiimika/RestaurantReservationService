@@ -7,9 +7,11 @@
 @section('content')
 <div class="edit-shop-form__content">
     <div class="edit-shop-form__heading">
-        <h2>店舗情報編集</h2>
+        <h2 class="edit-shop-form__heading-title">
+            店舗情報編集
+        </h2>
     </div>
-    <form class="form" action="{{ route('shop_owner.shop.edit.confirm', ['shop' => $shop->id]) }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('shop_owner.shop.edit.confirm', ['shop' => $shop->id]) }}" class="form" enctype="multipart/form-data" method="POST">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -18,7 +20,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="name" value="{{ old('name', $shop->name) }}">
+                    <input name="name" type="text" value="{{ old('name', $shop->name) }}">
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -34,7 +36,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--area">
-                    <select name="area" required>
+                    <select name="area">
                         @foreach($areas as $area)
                             <option value="{{ $area->id }}" {{ old('area', $shop->area->id) == $area->id ? 'selected' : '' }}>
                                 {{ $area->name }}
@@ -56,7 +58,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--genre">
-                    <select name="genre" required>
+                    <select name="genre">
                         @foreach($genres as $genre)
                             <option value="{{ $genre->id }}" {{ old('genre', $shop->genre->id) == $genre->id ? 'selected' : '' }}>
                                 {{ $genre->name }}
@@ -77,17 +79,17 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--image">
-                    <input type="file" name="shop_image">
+                    <input name="shop_image" type="file">
                 </div>
                 @if(session('shop_update_image'))
                     <div class="shop-image-preview">
                         <p>アップロードされた画像:</p>
-                        <img src="{{ asset(session('shop_update_image')) }}" alt="店舗画像" style="width: 150px;">
+                        <img alt="店舗画像" src="{{ asset(session('shop_update_image')) }}" style="width: 150px;">
                     </div>
                 @elseif(isset($shop) && $shop->image_url)
                     <div class="shop-image-preview">
                         <p>現在の店舗画像:</p>
-                        <img src="{{ asset($shop->image_url) }}" alt="店舗画像" style="width: 150px;">
+                        <img alt="店舗画像" src="{{ asset($shop->image_url) }}" style="width: 150px;">
                     </div>
                 @endif
                 <div class="form__error">
@@ -103,7 +105,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="outline" required>{{ old('outline', $shop->outline) }}</textarea>
+                    <textarea name="outline">{{ old('outline', $shop->outline) }}</textarea>
                 </div>
                 <div class="form__error">
                     @error('outline')
@@ -113,7 +115,9 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
+            <button class="form__button-submit" type="submit">
+                確認画面
+            </button>
         </div>
     </form>
 </div>

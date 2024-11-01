@@ -53,9 +53,10 @@ class MailController extends Controller
         return view('shop_owner.notification.done');
     }
 
+
     public function checkReservation($id)
     {
-        $reservation = Reservation::findOrFail($id);
+        $reservation = Reservation::with('user')->findOrFail($id);
         return view('shop_owner.check', compact('reservation'));
     }
 }

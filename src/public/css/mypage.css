@@ -30,7 +30,7 @@
     width: 100%;
 }
 
-.reservation-card h4 {
+.reservation-title {
     margin: 0;
     padding-bottom: 10px;
     font-weight: lighter;
@@ -89,7 +89,7 @@
     width: 90%;
 }
 
-.review-card h4 {
+.review-title {
     margin: 0;
     padding-bottom: 10px;
     font-weight: lighter;
@@ -98,7 +98,7 @@
 .review-summary-title {
     display: inline-block;
     margin-right: 40px;
-    width: 80px;
+    width: 100px;
 }
 
 .favorites-list {
@@ -132,12 +132,12 @@
     text-align: left;
 }
 
-.favorite-info h2 {
+.shop-name {
     font-size: 20px;
     color: #333;
 }
 
-.favorite-info p {
+.shop-tags {
     color: #777;
     margin: 10px 0;
 }

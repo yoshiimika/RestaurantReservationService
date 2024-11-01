@@ -7,9 +7,11 @@
 @section('content')
 <div class="create-admin-form__content">
     <div class="create-admin-form__heading">
-        <h2>店舗代表者の作成</h2>
+        <h2 class="create-admin-form__title">
+            店舗代表者の作成
+        </h2>
     </div>
-    <form class="form" action="{{ route('admin.confirm') }}" method="post">
+    <form action="{{ route('admin.confirm') }}" class="form" method="POST">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -18,7 +20,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--name">
-                    <input type="text" name="name" value="{{ old('name') }}">
+                    <input name="name" type="text" value="{{ old('name') }}">
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -34,7 +36,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--email">
-                    <input type="email" name="email" value="{{ old('email') }}">
+                    <input name="email" type="email" value="{{ old('email') }}">
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -50,7 +52,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--password">
-                    <input type="password" name="password">
+                    <input name="password" type="password">
                 </div>
                 <div class="form__error">
                     @error('password')
@@ -66,7 +68,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--password_confirmation">
-                    <input type="password" name="password_confirmation">
+                    <input name="password_confirmation" type="password">
                 </div>
             </div>
         </div>
@@ -95,7 +97,9 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
+            <button class="form__button-submit" type="submit">
+                確認画面
+            </button>
         </div>
     </form>
 </div>

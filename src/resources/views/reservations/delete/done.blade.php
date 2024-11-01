@@ -7,10 +7,13 @@
 @section('content')
 <div class="done-container">
     <div class="done-card">
-        <h2 class="done-title">予約をキャンセルしました</h2>
-        <p>キャンセルが完了しました。<br>
-            又のご利用をお待ちしています。</p>
-        <a href="{{ route('users.mypage') }}" class="back-button">マイページに戻る</a>
+        <h2 class="done-title">
+            予約をキャンセルしました
+        </h2>
+        <p>キャンセルが完了しました。<br>又のご利用をお待ちしています。</p>
+        <a class="back-button" href="{{ route('users.mypage') }}">
+            マイページに戻る
+        </a>
     </div>
 </div>
 @endsection

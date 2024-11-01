@@ -7,12 +7,14 @@
 @section('content')
 <div class="login-container">
     <div class="login-card">
-        <h2 class="login-title">Login</h2>
-        <form method="POST" action="{{route('login')}}">
-            @csrf
+        <h2 class="login-title">
+            Login
+        </h2>
+        <form action="{{route('login')}}" method="POST">
+        @csrf
             <div class="input-group">
-                <label for="email" class="email-input">Email</label>
-                <input type="email" name="email" id="email">
+                <label class="email-input" for="email">Email</label>
+                <input id="email" name="email" type="email">
             </div>
             <div class="error__group">
                 @error('email')
@@ -20,8 +22,8 @@
                 @enderror
             </div>
             <div class="input-group">
-                <label for="password" class="password-input">Password</label>
-                <input type="password" name="password" id="password">
+                <label class="password-input" for="password">Password</label>
+                <input id="password" name="password" type="password">
             </div>
             <div class="error__group">
                 @error('password')
@@ -29,7 +31,9 @@
                 @enderror
             </div>
             <div class="button-group">
-                <button type="submit" class="login-button">ログイン</button>
+                <button class="login-button" type="submit">
+                    ログイン
+                </button>
             </div>
         </form>
     </div>

@@ -8,17 +8,27 @@
 <div class="review-container">
     <div class="shop-info">
         <div class="shop-header">
-            <a href="{{ route('users.mypage') }}" class="back-button"><</a>
-            <h1 class="shop-name">{{ $review->shop->name }}</h1>
+            <a class="back-button" href="{{ route('users.mypage') }}">
+                <
+            </a>
+            <h1 class="shop-name">
+                {{ $review->shop->name }}
+            </h1>
         </div>
-        <img src="{{ asset($review->shop->image_url) }}" alt="{{ $review->shop->name }}" class="shop-image">
-        <p class="shop-tags">#{{ $review->shop->area->name }} #{{ $review->shop->genre->name }}</p>
-        <p class="shop-description">{{ $review->shop->outline }}</p>
+        <img alt="{{ $review->shop->name }}" class="shop-image" src="{{ asset($review->shop->image_url) }}">
+        <p class="shop-tags">
+            #{{ $review->shop->area->name }} #{{ $review->shop->genre->name }}
+        </p>
+        <p class="shop-description">
+            {{ $review->shop->outline }}
+        </p>
     </div>
     <div class="review-edit">
-        <h2>{{ $review->shop->name }} のレビューを編集する</h2>
+        <h2 class="review-edit-title">
+            {{ $review->shop->name }} のレビューを編集する
+        </h2>
         <form action="{{ route('reviews.edit.confirm', $review->id) }}" method="POST">
-            @csrf
+        @csrf
             <div class="form__group">
                 <div class="form__group-title">
                     <span class="form__label--item">評価(1-5)</span>
@@ -55,7 +65,9 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="edit-button">編集内容を確認する</button>
+            <button class="edit-button" type="submit">
+                編集内容を確認する
+            </button>
         </form>
     </div>
 </div>

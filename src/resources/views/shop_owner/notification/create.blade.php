@@ -7,9 +7,11 @@
 @section('content')
 <div class="notification__content">
     <div class="notification__heading">
-        <h2>お知らせメールの送付</h2>
+        <h2 class="notification__heading-title">
+            お知らせメールの送付
+        </h2>
     </div>
-    <form class="form" action="{{ route('shop_owner.notification.confirm') }}" method="POST">
+    <form action="{{ route('shop_owner.notification.confirm') }}" class="form" method="POST">
     @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -36,8 +38,8 @@
                 <div class="form__input--user">
                 @foreach ($users as $user)
                     <div class="user-checkbox">
-                        <input type="checkbox" name="user_ids[]" value="{{ $user->id }}" class="checkbox-input" {{ is_array(old('user_ids')) && in_array($user->id, old('user_ids')) ? 'checked' : '' }}>
-                        <label for="user_{{ $user->id }}" class="checkbox-label">{{ $user->name }} ({{ $user->email }})</label>
+                        <label class="checkbox-label" for="user_{{ $user->id }}">{{ $user->name }} ({{ $user->email }})</label>
+                        <input class="checkbox-input" name="user_ids[]" type="checkbox" value="{{ $user->id }}" {{ is_array(old('user_ids')) && in_array($user->id, old('user_ids')) ? 'checked' : '' }}>
                     </div>
                 @endforeach
                 </div>
@@ -49,7 +51,9 @@
             </div>
         </div>
         <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
+            <button class="form__button-submit" type="submit">
+                確認画面
+            </button>
         </div>
     </form>
 </div>

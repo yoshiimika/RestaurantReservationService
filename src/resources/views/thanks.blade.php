@@ -7,8 +7,12 @@
 @section('content')
 <div class="thanks-container">
     <div class="thanks-card">
-        <h2>会員登録ありがとうございます</h2>
-        <a href="{{route('login')}}" class="login-button">ログインする</a>
+        <h2 class="thanks-title">
+            会員登録ありがとうございます
+        </h2>
+        <a class="login-button" href="{{route('login')}}">
+            ログインする
+        </a>
     </div>
 </div>
 @endsection

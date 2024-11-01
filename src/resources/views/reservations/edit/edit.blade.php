@@ -8,22 +8,32 @@
 <div class="reservation-container">
     <div class="shop-info">
         <div class="shop-header">
-            <a href="{{ route('users.mypage') }}" class="back-button"><</a>
-            <h1 class="shop-name">{{ $shop->name }}</h1>
+            <a class="back-button" href="{{ route('users.mypage') }}">
+                <
+            </a>
+            <h1 class="shop-name">
+                {{ $shop->name }}
+            </h1>
         </div>
-        <img src="{{ asset($shop->image_url) }}" alt="{{ $shop->name }}" class="shop-image">
-        <p class="shop-tags">#{{ $shop->area->name }} #{{ $shop->genre->name }}</p>
-        <p class="shop-description">{{ $shop->outline }}</p>
+        <img alt="{{ $shop->name }}" class="shop-image" src="{{ asset($shop->image_url) }}">
+        <p class="shop-tags">
+            #{{ $shop->area->name }} #{{ $shop->genre->name }}
+        </p>
+        <p class="shop-description">
+            {{ $shop->outline }}
+        </p>
     </div>
     <div class="reservation-edit">
-        <h2>予約変更</h2>
+        <h2 class="reservation-title">
+            予約変更
+        </h2>
         <form action="{{ route('reservations.edit.confirm', $reservation->id) }}" method="POST">
-            @csrf
+        @csrf
             <div class="input-group">
-                <input type="hidden" name="shop_id" value="{{ $reservation->shop_id }}">
+                <input name="shop_id" type="hidden" value="{{ $reservation->shop_id }}">
             </div>
             <div class="input-group">
-                <input type="date" id="date" name="date" value="{{ old('date', $reservation->date) }}">
+                <input id="date" name="date" type="date" value="{{ old('date', $reservation->date) }}">
             </div>
             <div class="error__group">
                 @error('date')
@@ -31,7 +41,7 @@
                 @enderror
             </div>
             <div class="input-group">
-                <input type="time" id="time" name="time" value="{{ old('time', \Carbon\Carbon::parse($reservation->time)->format('H:i')) }}">
+                <input id="time" name="time" type="time" value="{{ old('time', \Carbon\Carbon::parse($reservation->time)->format('H:i')) }}">
             </div>
             <div class="error__group">
                 @error('time')
@@ -39,7 +49,7 @@
                 @enderror
             </div>
             <div class="input-group">
-                <input type="number" id="number" name="number" value="{{ old('number', $reservation->number) }}" min="1">
+                <input id="number" name="number" type="number" min="1" max="6" value="{{ old('number', $reservation->number) }}">
             </div>
             <div class="error__group">
                 @error('number')
@@ -52,7 +62,9 @@
                 <p><strong class="reservation-summary-title">Time</strong><span id="selected-time"></span></p>
                 <p><strong class="reservation-summary-title">Number</strong><span id="selected-number"></span></p>
             </div>
-            <button type="submit" class="edit-button">変更内容を確認する</button>
+            <button class="edit-button" type="submit">
+                変更内容を確認する
+            </button>
         </form>
     </div>
 </div>

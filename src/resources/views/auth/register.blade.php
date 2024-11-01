@@ -7,12 +7,14 @@
 @section('content')
 <div class="registration-container">
     <div class="registration-card">
-        <h2 class="registration-title">Registration</h2>
-        <form method="POST" action="{{route('register')}}">
-            @csrf
+        <h2 class="registration-title">
+            Registration
+        </h2>
+        <form action="{{route('register')}}" method="POST">
+        @csrf
             <div class="input-group">
-                <label for="name" class="name-input">Username</label>
-                <input type="text" name="name" id="name">
+                <label class="name-input" for="name">Username</label>
+                <input id="name" name="name" type="text">
             </div>
             <div class="error__group">
                 @error('name')
@@ -20,8 +22,8 @@
                 @enderror
             </div>
             <div class="input-group">
-                <label for="email" class="email-input">Email</label>
-                <input type="email" name="email" id="email">
+                <label class="email-input" for="email">Email</label>
+                <input id="email" name="email" type="email">
             </div>
             <div class="error__group">
                 @error('email')
@@ -29,8 +31,8 @@
                 @enderror
             </div>
             <div class="input-group">
-                <label for="password" class="password-input">Password</label>
-                <input type="password" name="password" id="password">
+                <label class="password-input" for="password">Password</label>
+                <input id="password" name="password" type="password">
             </div>
             <div class="error__group">
                 @error('password')
@@ -38,7 +40,9 @@
                 @enderror
             </div>
             <div class="button-group">
-                <button type="submit" class="register-button">登録</button>
+                <button class="register-button" type="submit">
+                    登録
+                </button>
             </div>
         </form>
     </div>

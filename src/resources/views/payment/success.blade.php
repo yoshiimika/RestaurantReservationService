@@ -7,9 +7,10 @@
 @section('content')
 <div class="success-container">
     <div class="success-card">
-        <h2 class="success-title">支払いが完了しました</h2>
-        <p>お支払いが正常に処理されました。<br>
-            ご利用ありがとうございます。</p>
+        <h2 class="success-title">
+            支払いが完了しました
+        </h2>
+        <p>お支払いが正常に処理されました。<br>ご利用ありがとうございます。</p>
     </div>
 </div>
 @endsection
