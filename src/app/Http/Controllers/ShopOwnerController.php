@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ShopRequest;
 use App\Models\Area;
 use App\Models\Genre;
-use App\Models\Reservation;
 use App\Models\Shop;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
