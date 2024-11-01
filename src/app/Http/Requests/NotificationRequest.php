@@ -24,9 +24,9 @@ class NotificationRequest extends FormRequest
     public function rules()
     {
         return [
-            'message_content' => 'required|string',
-            'user_ids' => 'required|array|min:1',
-            'user_ids.*' => 'exists:users,id',
+            'message_content' => ['required', 'string'],
+            'user_ids' => ['required', 'array', 'min:1'],
+            'user_ids.*' => ['exists:users,id'],
         ];
     }
 

@@ -27,7 +27,7 @@ class UpdateShopOwnerRequest extends FormRequest
     {
         $shopOwnerId = $this->route('shopOwner')->id;
         return [
-            'name' => 'required|string|max:255',
+            'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -35,9 +35,9 @@ class UpdateShopOwnerRequest extends FormRequest
                 'max:255',
                 Rule::unique('users', 'email')->ignore($shopOwnerId),
             ],
-            'current_password' => 'required|string',
-            'new_password' => 'nullable|string|min:8|confirmed',
-            'shop_id' => 'nullable|exists:shops,id',
+            'current_password' => ['required', 'string'],
+            'new_password' => ['nullable', 'string', 'min:8', 'confirmed'],
+            'shop_id' => ['nullable', 'exists:shops,id'],
         ];
     }
 

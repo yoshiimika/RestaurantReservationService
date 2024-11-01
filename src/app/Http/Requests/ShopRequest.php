@@ -24,11 +24,11 @@ class ShopRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'area' => 'required|exists:areas,id',
-            'genre' => 'required|exists:genres,id',
-            'shop_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'outline' => 'nullable|string|max:100',
+            'name' => ['required', 'string', 'max:255'],
+            'area' => ['required', 'exists:areas,id'],
+            'genre' => ['required', 'exists:genres,id'],
+            'shop_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'outline' => ['nullable', 'string', 'max:100'],
         ];
     }
 
