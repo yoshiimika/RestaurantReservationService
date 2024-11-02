@@ -8,7 +8,7 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">
-            店舗作成内容を確認
+            店舗作成内容の確認
         </h2>
         <div class="shop-information__group">
             <div class="shop-information__group-title">

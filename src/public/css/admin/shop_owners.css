@@ -62,3 +62,37 @@
 .delete-btn:hover {
     opacity: 0.8;
 }
+
+@media screen and (max-width: 768px) {
+    .shop_owners__row {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .shop_owners__header-item {
+        display: none;
+    }
+
+    .shop_owners__data-item {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        border-top: none;
+        width: 100%;
+    }
+
+    .shop_owners__data-item::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        text-align: center;
+    }
+}

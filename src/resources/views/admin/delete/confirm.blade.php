@@ -8,7 +8,7 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">
-            この店舗代表者を削除しますか？
+            削除内容の確認
         </h2>
         <div class="shop_owner-information__group">
             <div class="shop_owner-information__group-title">

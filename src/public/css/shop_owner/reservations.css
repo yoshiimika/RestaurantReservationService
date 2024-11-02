@@ -48,3 +48,37 @@
     height: 70px;
     border-top: 1px solid gray;
 }
+
+@media screen and (max-width: 768px) {
+    .reservations__row {
+        display: block;
+        margin-bottom: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .reservations__header-item {
+        display: none;
+    }
+
+    .reservations__data-item {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        border-top: none;
+        width: 100%;
+    }
+
+    .reservations__data-item::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .edit-btn,
+    .delete-btn {
+        text-align: center;
+    }
+}

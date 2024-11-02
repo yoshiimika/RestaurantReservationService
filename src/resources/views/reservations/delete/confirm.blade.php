@@ -12,6 +12,14 @@
         </h2>
         <div class="reservation__group">
             <div class="reservation__group-title">
+                店舗名
+            </div>
+            <div class="reservation__group-content">
+                {{ $reservation->shop->name }}
+            </div>
+        </div>
+        <div class="reservation__group">
+            <div class="reservation__group-title">
                 予約日
             </div>
             <div class="reservation__group-content">

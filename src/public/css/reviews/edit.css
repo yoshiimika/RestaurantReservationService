@@ -131,3 +131,28 @@
 .edit-button:hover {
     background-color: #007bff;
 }
+
+@media screen and (max-width: 768px) {
+    .review-container {
+        flex-direction: column;
+    }
+
+    .shop-info,
+    .review-edit {
+        width: 100%;
+    }
+
+    .form__group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__group-title,
+    .form__group-content {
+        width: 100%;
+    }
+
+    .form__input--rating select {
+        width: 100%;
+    }
+}

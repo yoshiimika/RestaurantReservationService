@@ -8,7 +8,7 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">
-            送信内容を確認
+            送信内容の確認
         </h2>
         <div class="notification__group">
             <div class="notification__group-title">

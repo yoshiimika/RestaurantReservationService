@@ -27,13 +27,13 @@
 }
 
 .review__group-title {
-    width: 300px;
+    width: 40%;
     display: flex;
     align-items: center;
 }
 
 .review__group-content {
-    width: 800px;
+    width: 100%;
     text-align: left;
 }
 
@@ -72,4 +72,20 @@
 
 .back-button:hover {
     background-color: #c5c5c5;
+}
+
+@media screen and (max-width: 768px) {
+    .confirm-card {
+        width: 80vw;
+        padding: 50px 10px;
+    }
+
+    .confirm-title {
+        font-size: 20px;
+    }
+
+    .review__group-title,
+    .review__group-content {
+        font-size: 15px;
+    }
 }

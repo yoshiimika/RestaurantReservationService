@@ -86,10 +86,7 @@
         font-size: 20px;
     }
 
-    .reservation__group-title {
-        font-size: 15px;
-    }
-
+    .reservation__group-title,
     .reservation__group-content {
         font-size: 15px;
     }

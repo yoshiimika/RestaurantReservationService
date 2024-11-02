@@ -1,14 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
 .review-container {
     display: flex;
     justify-content: space-between;
-    margin: 2% 6%;
+    margin: 2% 5%;
 }
 
 .shop-info {
@@ -137,4 +130,29 @@ body {
 
 .create-button:hover {
     background-color: #007bff;
+}
+
+@media screen and (max-width: 768px) {
+    .review-container {
+        flex-direction: column;
+    }
+
+    .shop-info,
+    .review-create {
+        width: 100%;
+    }
+
+    .form__group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form__group-title,
+    .form__group-content {
+        width: 100%;
+    }
+
+    .form__input--rating select {
+        width: 100%;
+    }
 }

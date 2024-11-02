@@ -22,11 +22,11 @@
             </tr>
             @foreach($shopOwners as $shopOwner)
             <tr class="shop_owners__row">
-                <td class="shop_owners__data-item">{{ $shopOwner->name }}</td>
-                <td class="shop_owners__data-item">{{ $shopOwner->email }}</td>
-                <td class="shop_owners__data-item">{{ str_repeat('●', 8) }}</td>
-                <td class="shop_owners__data-item">{{ $shopOwner->shop ? $shopOwner->shop->name : '店舗無し' }}</td>
-                <td class="shop_owners__data-item">
+                <td class="shop_owners__data-item" data-label="名前">{{ $shopOwner->name }}</td>
+                <td class="shop_owners__data-item" data-label="メールアドレス">{{ $shopOwner->email }}</td>
+                <td class="shop_owners__data-item" data-label="パスワード">{{ str_repeat('●', 8) }}</td>
+                <td class="shop_owners__data-item" data-label="店舗">{{ $shopOwner->shop ? $shopOwner->shop->name : '店舗無し' }}</td>
+                <td class="shop_owners__data-item" data-label="アクション">
                     <div class="action-buttons">
                         <form action="{{ route('admin.edit.edit', $shopOwner->id) }}" method="GET">
                         @csrf

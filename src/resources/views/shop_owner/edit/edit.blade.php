@@ -8,7 +8,7 @@
 <div class="edit-shop-form__content">
     <div class="edit-shop-form__heading">
         <h2 class="edit-shop-form__heading-title">
-            店舗情報編集
+            店舗情報の編集
         </h2>
     </div>
     <form action="{{ route('shop_owner.shop.edit.confirm', ['shop' => $shop->id]) }}" class="form" enctype="multipart/form-data" method="POST">

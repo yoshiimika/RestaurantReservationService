@@ -42,10 +42,10 @@
       </tr>
       @foreach($reservations as $reservation)
       <tr class="reservations__row">
-        <td class="reservations__data-item">{{ $reservation->user->name }}</td>
-        <td class="reservations__data-item">{{ \Carbon\Carbon::parse($reservation->date)->format('Y-m-d') }}</td>
-        <td class="reservations__data-item">{{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</td>
-        <td class="reservations__data-item">{{ $reservation->number }}</td>
+        <td class="reservations__data-item" data-label="予約者名">{{ $reservation->user->name }}</td>
+        <td class="reservations__data-item" data-label="予約日">{{ \Carbon\Carbon::parse($reservation->date)->format('Y-m-d') }}</td>
+        <td class="reservations__data-item" data-label="時間">{{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</td>
+        <td class="reservations__data-item" data-label="人数">{{ $reservation->number }}</td>
       </tr>
       @endforeach
     </table>

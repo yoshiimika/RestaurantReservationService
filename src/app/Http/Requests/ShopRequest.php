@@ -28,7 +28,7 @@ class ShopRequest extends FormRequest
             'area' => ['required', 'exists:areas,id'],
             'genre' => ['required', 'exists:genres,id'],
             'shop_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
-            'outline' => ['nullable', 'string', 'max:100'],
+            'outline' => ['nullable', 'string', 'max:200'],
         ];
     }
 
@@ -45,7 +45,7 @@ class ShopRequest extends FormRequest
             'shop_image.image' => '店舗画像は有効な画像ファイルを選択してください。',
             'shop_image.mimes' => '店舗画像はjpeg, png, jpg, gif形式のファイルを選択してください。',
             'shop_image.max' => '店舗画像のサイズは2MB以内でアップロードしてください。',
-            'outline.max' => '店舗説明は100文字以内で入力してください。',
+            'outline.max' => '店舗説明は200文字以内で入力してください。',
         ];
     }
 }

@@ -73,3 +73,26 @@
 .back-button:hover {
     background-color: #c5c5c5;
 }
+
+@media screen and (max-width: 768px) {
+    .confirm-card {
+        width: 300px;
+        padding: 50px 30px;
+    }
+
+    .confirm-title {
+        font-size: 20px;
+    }
+
+    .shop-information__group {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .shop-information__group-title,
+    .shop-information__group-content {
+        width: 100%;
+        font-size: 15px;
+    }
+}

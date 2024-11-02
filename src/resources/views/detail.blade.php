@@ -64,7 +64,7 @@
                     @enderror
                 </div>
                 <div class="input-group">
-                    <input id="number" name="number" min="1" max="6" type="number" value="{{ old('number') }}" onchange="updateSummary('number', this.value)">
+                    <input id="number" name="number" type="number" min="1" max="6" value="{{ old('number') }}" onchange="updateSummary('number', this.value)">
                 </div>
                 <div class="error__group">
                     @error('number')

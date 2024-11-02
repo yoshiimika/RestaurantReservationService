@@ -8,8 +8,16 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">
-            このレビューを削除しますか？
+            削除内容の確認
         </h2>
+        <div class="review__group">
+            <div class="review__group-title">
+                店舗名
+            </div>
+            <div class="review__group-content">
+                {{ $review->shop->name }}
+            </div>
+        </div>
         <div class="review__group">
             <div class="review__group-title">
                 評価

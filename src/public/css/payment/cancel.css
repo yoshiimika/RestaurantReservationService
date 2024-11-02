@@ -34,3 +34,14 @@
 .back-button:hover {
     background-color: #007bff;
 }
+
+@media screen and (max-width: 768px) {
+    .cancel-card {
+        width: 300px;
+        padding: 50px 30px;
+    }
+
+    .cancel-title {
+        font-size: 17px;
+    }
+}

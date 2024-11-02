@@ -8,8 +8,16 @@
 <div class="confirm-container">
     <div class="confirm-card">
         <h2 class="confirm-title">
-            {{ $shop->name }}のレビュー投稿内容を確認
+            投稿内容の確認
         </h2>
+        <div class="review__group">
+            <div class="review__group-title">
+                店舗名
+            </div>
+            <div class="review__group-content">
+                {{ $shop->name }}
+            </div>
+        </div>
         <div class="review__group">
             <div class="review__group-title">
                 評価
@@ -34,7 +42,7 @@
                 <input name="rating" type="hidden" value="{{ $rating }}">
                 <input name="comment" type="hidden" value="{{ $comment }}">
                 <button class="confirm-button" type="submit">
-                    レビューを投稿する
+                    投稿する
                 </button>
                 <button class="back-button" name="back" type="submit">
                     戻る
