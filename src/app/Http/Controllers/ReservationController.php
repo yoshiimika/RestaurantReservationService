@@ -32,7 +32,7 @@ class ReservationController extends Controller
         $reservation->date = $request->date;
         $reservation->time = $request->time;
         $reservation->number = $request->number;
-        $reservation->status = '予約済み';
+        $reservation->status = '予約済';
         $reservation->save();
         return redirect()->route('reservations.done');
     }

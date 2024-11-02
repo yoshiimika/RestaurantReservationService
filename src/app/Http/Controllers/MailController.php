@@ -57,6 +57,10 @@ class MailController extends Controller
     public function checkReservation($id)
     {
         $reservation = Reservation::with('user')->findOrFail($id);
+        if ($reservation->status === '予約済') {
+            $reservation->status = '来店済';
+            $reservation->save();
+        }
         return view('shop_owner.check', compact('reservation'));
     }
 }

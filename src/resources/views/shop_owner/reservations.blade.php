@@ -39,6 +39,7 @@
         <th class="reservations__header-item">予約日</th>
         <th class="reservations__header-item">時間</th>
         <th class="reservations__header-item">人数</th>
+        <th class="reservations__header-item">ステータス</th>
       </tr>
       @foreach($reservations as $reservation)
       <tr class="reservations__row">
@@ -46,6 +47,7 @@
         <td class="reservations__data-item" data-label="予約日">{{ \Carbon\Carbon::parse($reservation->date)->format('Y-m-d') }}</td>
         <td class="reservations__data-item" data-label="時間">{{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}</td>
         <td class="reservations__data-item" data-label="人数">{{ $reservation->number }}</td>
+        <td class="reservations__data-item" data-label="ステータス">{{ $reservation->status }}</td>
       </tr>
       @endforeach
     </table>
