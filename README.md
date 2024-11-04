@@ -111,10 +111,10 @@ services:
     mysql:
         image: mysql:8.0.26
         environment:
-            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: ${MYSQL_DATABASE}
-            MYSQL_USER: ${MYSQL_USER}
-            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel_db
+            MYSQL_USER: laravel_user
+            MYSQL_PASSWORD: laravel_pass
         command:
             mysqld --default-authentication-plugin=mysql_native_password
         volumes:
@@ -155,22 +155,18 @@ FROM php:7.4.9-fpm
 COPY php.ini /usr/local/etc/php/
 
 RUN apt update \
-  && apt install -y default-mysql-client zlib1g-dev libzip-dev unzip \
-  && docker-php-ext-install pdo_mysql zip
+    && apt install -y default-mysql-client zlib1g-dev libzip-dev unzip \
+    && apt install -y libpng-dev libjpeg-dev libfreetype6-dev libmagickwand-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql zip gd \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
 
 RUN curl -sS https://getcomposer.org/installer | php \
-  && mv composer.phar /usr/local/bin/composer \
-  && composer self-update
+    && mv composer.phar /usr/local/bin/composer \
+    && composer self-update
 
 WORKDIR /var/www
-```
-`docker/php/php.ini`ファイルに以下の内容を追加して下さい。
-```
-date.timezone = "Asia/Tokyo"
-
-[mbstring]
-mbstring.internal_encoding = "UTF-8"
-mbstring.language = "Japanese"
 ```
 
 5.MySQLの設定  
