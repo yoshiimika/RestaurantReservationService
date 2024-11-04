@@ -213,8 +213,8 @@ default-time-zone = 'Asia/Tokyo'
 6.php artisan db:seed
 
 ## ダミーデータの説明
-ユーザー一覧
-1.管理者　　　email: admin@admin.com
-2.店舗代表者　email: shop@shop.com　※"shop_id: 1"の代表者
-3.ユーザー　　email: test@test.com
+ユーザー一覧  
+1.管理者　　　email: admin@admin.com  
+2.店舗代表者　email: shop@shop.com　※"shop_id: 1"の代表者  
+3.ユーザー　　email: test@test.com  
 ※パスワードは全て"password"でログインできます。
