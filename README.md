@@ -26,7 +26,7 @@
 学習のアウトプットとして作成しました。
 
 ## URL
-- 本番環境：
+- 本番環境：https://15.152.54.195
 - 開発環境：http://localhost/
 - phpMyAdmin:http://localhost:8080/
 
