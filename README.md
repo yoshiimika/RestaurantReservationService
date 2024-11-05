@@ -73,7 +73,7 @@
 1.ディレクトリの作成  
 プロジェクトのディレクトリ構造を以下のように作成して下さい。
 <pre>
-AttendanceManagementSystem  
+RestaurantReservationService  
 ├── docker  
 │   ├── mysql  
 │   │   ├── data  
