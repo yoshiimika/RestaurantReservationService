@@ -150,7 +150,7 @@ server {
 4.PHPの設定  
 `docker/php/Dockerfile`ファイルに以下の内容を追加して下さい。
 ```
-FROM php:7.4.9-fpm
+FROM php:8.2-fpm
 
 COPY php.ini /usr/local/etc/php/
 
