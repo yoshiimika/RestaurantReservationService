@@ -217,7 +217,7 @@ default-time-zone = 'Asia/Tokyo'
 ### 開発環境
 - ファイル名：.env
 - 説明：ローカル開発環境用の設定ファイルです。通常、デフォルトの.envファイルとして使用されます。
-- 設定：
+- 設定：  
 　APP_ENV=local  
 　APP_DEBUG=true  
 　DB_CONNECTION=mysql  
@@ -226,7 +226,7 @@ default-time-zone = 'Asia/Tokyo'
 ### 本番環境
 - ファイル名：.env.production
 - 説明：本番環境専用の設定ファイルです。本番環境ではセキュリティ上の理由から、エラーメッセージの表示が無効になっています。
-- 設定：
+- 設定：  
 　APP_ENV=production  
 　APP_DEBUG=false  
 　DB_CONNECTION=mysql  
@@ -238,7 +238,11 @@ default-time-zone = 'Asia/Tokyo'
 
 ## ダミーデータの説明
 ユーザー一覧  
+
 1.管理者　　　email: admin@admin.com  
+
 2.店舗代表者　email: shop@shop.com　※"shop_id: 1"の代表者  
+
 3.ユーザー　　email: test@test.com  
+
 ※パスワードは全て"password"でログインできます。
