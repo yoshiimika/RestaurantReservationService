@@ -212,6 +212,30 @@ default-time-zone = 'Asia/Tokyo'
 
 6.php artisan db:seed
 
+## 環境別設定ファイルの使用
+このプロジェクトでは、環境別に設定ファイル（.env）を使用しています。
+### 開発環境
+- ファイル名：.env
+- 説明：ローカル開発環境用の設定ファイルです。通常、デフォルトの.envファイルとして使用されます。
+- 設定：
+　APP_ENV=local  
+　APP_DEBUG=true  
+　DB_CONNECTION=mysql  
+　DB_HOST=mysql
+　FILESYSTEM_DRIVER=s3
+### 本番環境
+- ファイル名：.env.production
+- 説明：本番環境専用の設定ファイルです。本番環境ではセキュリティ上の理由から、エラーメッセージの表示が無効になっています。
+- 設定：
+　APP_ENV=production  
+　APP_DEBUG=false  
+　DB_CONNECTION=mysql  
+　DB_HOST=rese-prod-db.c9c8ugqweql1.ap-northeast-3.rds.amazonaws.com
+　FILESYSTEM_DRIVER=s3
+### 環境ごとの設定ファイルの使用方法
+- 開発環境では、デフォルトの.envファイルを使用してください。
+- 本番環境では、.env.productionファイルを使用します。デプロイ時にこのファイルを読み込むように設定してください。
+
 ## ダミーデータの説明
 ユーザー一覧  
 1.管理者　　　email: admin@admin.com  
