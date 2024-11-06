@@ -221,7 +221,7 @@ default-time-zone = 'Asia/Tokyo'
 　APP_ENV=local  
 　APP_DEBUG=true  
 　DB_CONNECTION=mysql  
-　DB_HOST=mysql
+　DB_HOST=mysql  
 　FILESYSTEM_DRIVER=s3
 ### 本番環境
 - ファイル名：.env.production
@@ -230,7 +230,7 @@ default-time-zone = 'Asia/Tokyo'
 　APP_ENV=production  
 　APP_DEBUG=false  
 　DB_CONNECTION=mysql  
-　DB_HOST=rese-prod-db.c9c8ugqweql1.ap-northeast-3.rds.amazonaws.com
+　DB_HOST=rese-prod-db.c9c8ugqweql1.ap-northeast-3.rds.amazonaws.com  
 　FILESYSTEM_DRIVER=s3
 ### 環境ごとの設定ファイルの使用方法
 - 開発環境では、デフォルトの.envファイルを使用してください。
@@ -238,11 +238,7 @@ default-time-zone = 'Asia/Tokyo'
 
 ## ダミーデータの説明
 ユーザー一覧  
-
 1.管理者　　　email: admin@admin.com  
-
 2.店舗代表者　email: shop@shop.com　※"shop_id: 1"の代表者  
-
 3.ユーザー　　email: test@test.com  
-
 ※パスワードは全て"password"でログインできます。
