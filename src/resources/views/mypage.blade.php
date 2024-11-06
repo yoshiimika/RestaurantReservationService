@@ -98,7 +98,7 @@
             <div class="favorites-list">
                 @foreach($favorites as $favorite)
                 <div class="favorite-item">
-                    <img alt="{{ $favorite->shop->name }}" src="{{ asset($favorite->shop->image_url) }}">
+                    <img alt="{{ $favorite->shop->name }}" src="{{ $favorite->shop->image_url }}">
                     <div class="favorite-info">
                         <h2 class="shop-name">
                             {{ $favorite->shop->name }}

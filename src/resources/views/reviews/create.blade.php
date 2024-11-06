@@ -15,7 +15,7 @@
                 {{ $shop->name }}
             </h1>
         </div>
-        <img alt="{{ $shop->name }}" class="shop-image" src="{{ asset($shop->image_url) }}">
+        <img alt="{{ $shop->name }}" class="shop-image" src="{{ $shop->image_url }}">
         <p class="shop-tags">
             #{{ $shop->area->name }} #{{ $shop->genre->name }}
         </p>

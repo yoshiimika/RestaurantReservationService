@@ -15,7 +15,7 @@
                 {{ $review->shop->name }}
             </h1>
         </div>
-        <img alt="{{ $review->shop->name }}" class="shop-image" src="{{ asset($review->shop->image_url) }}">
+        <img alt="{{ $review->shop->name }}" class="shop-image" src="{{ $review->shop->image_url }}">
         <p class="shop-tags">
             #{{ $review->shop->area->name }} #{{ $review->shop->genre->name }}
         </p>

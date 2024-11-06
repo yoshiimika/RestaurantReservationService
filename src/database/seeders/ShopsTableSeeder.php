@@ -179,8 +179,8 @@ class ShopsTableSeeder extends Seeder
         foreach ($shops as $shop) {
             $imageName = basename($shop['image_url']);
             $imageContent = file_get_contents($shop['image_url']);
-            Storage::put('public/shop-images/' . $imageName, $imageContent);
-            $storedImagePath = 'storage/shop-images/' . $imageName;
+            Storage::disk('s3')->put('shop-images/' . $imageName, $imageContent);
+            $storedImagePath = Storage::disk('s3')->url('shop-images/' . $imageName);
 
             DB::table('shops')->insert([
                 'name' => $shop['name'],

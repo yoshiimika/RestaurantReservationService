@@ -39,7 +39,7 @@
                 店舗画像
             </div>
             <div class="shop-information__group-content">
-                <img alt="店舗画像" src="{{ asset($image_url) }}" style="width: 150px;">
+                <img alt="店舗画像" src="{{ $image_url }}" style="width: 150px;">
             </div>
         </div>
         <div class="shop-information__group">

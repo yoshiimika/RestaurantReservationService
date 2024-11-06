@@ -58,13 +58,9 @@ class ShopOwnerController extends Controller
         if ($request->hasFile('shop_image')) {
             $image = $request->file('shop_image');
             $hash = md5_file($image->getRealPath());
-            $directory = 'public/shop-images';
             $imageName = $hash . '.' . $image->getClientOriginalExtension();
-            $storedImagePath = $directory . '/' . $imageName;
-            if (!Storage::exists($storedImagePath)) {
-                $image->storeAs($directory, $imageName);
-            }
-            $storedImagePath = 'storage/shop-images/' . $imageName;
+            Storage::disk('s3')->put('shop-images/' . $imageName, file_get_contents($image));
+            $storedImagePath = Storage::disk('s3')->url('shop-images/' . $imageName);
             $request->session()->put('shop_data.image', $storedImagePath);
         }
         $data = [
@@ -120,11 +116,8 @@ class ShopOwnerController extends Controller
             $hash = md5_file($image->getRealPath());
             $directory = 'public/shop-images';
             $imageName = $hash . '.' . $image->getClientOriginalExtension();
-            $newImagePath = $directory . '/' . $imageName;
-            if (!Storage::exists($newImagePath)) {
-                $image->storeAs($directory, $imageName);
-            }
-            $storedImagePath = 'storage/shop-images/' . $imageName;
+            Storage::disk('s3')->put('shop-images/' . $imageName, file_get_contents($image));
+            $storedImagePath = Storage::disk('s3')->url('shop-images/' . $imageName);
             $request->session()->put('shop_update_image', $storedImagePath);
         }
         $data = [

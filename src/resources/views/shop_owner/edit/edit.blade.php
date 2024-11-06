@@ -84,12 +84,12 @@
                 @if(session('shop_update_image'))
                     <div class="shop-image-preview">
                         <p>アップロードされた画像:</p>
-                        <img alt="店舗画像" src="{{ asset(session('shop_update_image')) }}" style="width: 150px;">
+                        <img alt="店舗画像" src="{{ session('shop_update_image') }}" style="width: 150px;">
                     </div>
                 @elseif(isset($shop) && $shop->image_url)
                     <div class="shop-image-preview">
                         <p>現在の店舗画像:</p>
-                        <img alt="店舗画像" src="{{ asset($shop->image_url) }}" style="width: 150px;">
+                        <img alt="店舗画像" src="{{ $shop->image_url }}" style="width: 150px;">
                     </div>
                 @endif
                 <div class="form__error">
