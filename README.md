@@ -65,7 +65,7 @@
 <img width="332" alt="スクリーンショット 2024-11-05 7 52 16" src="https://github.com/user-attachments/assets/7e3553e5-5d6b-47b1-9eeb-1f2f577be062">
 
 ## ER図
-![ER_diagram](https://github.com/user-attachments/assets/dcb0233c-dedf-47e1-8408-a323c63ed571)
+![ER_diagram](https://github.com/user-attachments/assets/661be04b-be21-4ab2-a0e5-a3510d35f539)
 
 # 開発環境
 ## Dockerビルド
