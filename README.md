@@ -236,6 +236,81 @@ default-time-zone = 'Asia/Tokyo'
 - 開発環境では、デフォルトの.envファイルを使用してください。
 - 本番環境では、.env.productionファイルを使用します。デプロイ時にこのファイルを読み込むように設定してください。
 
+## メール認証機能について
+このプロジェクトでは、Mailtrapを使用して開発環境でのメール送信をトラップし、安全にテストを行うことができます。 
+以下にセットアップ方法を記載します。
+
+### セットアップ方法
+
+1.Mailtrap アカウントの作成  
+Mailtrap にアクセスし、無料または有料アカウントを作成します。
+
+2.SMTP 設定情報を取得  
+Mailtrap ダッシュボードにログインし、新しい「Inbox」を作成します。  
+作成した Inbox の「Integrations」タブから Laravel 用のSMTP 設定情報を確認できます。
+
+3..env ファイルを更新  
+.env ファイルに以下の設定を追加または更新してください。
+```
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_mailtrap_username
+MAIL_PASSWORD=your_mailtrap_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=example@example.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+your_mailtrap_username と your_mailtrap_password には、Mailtrap の認証情報を入力してください。
+
+4.動作確認  
+ローカル環境でユーザー登録を行い、登録確認メールがMailtrapダッシュボードに届くことを確認してください。
+
+## Stripeを使用した決済機能について
+このプロジェクトでは、Stripeを使用して決済機能を実装しています。  
+以下にセットアップ方法や利用方法を記載します。
+
+### 前提条件
+- Dockerがインストールされていること
+- Docker Composeがインストールされていること
+
+### セットアップ方法
+
+1.Stripeアカウントの作成とAPIキーの取得  
+Stripeの公式サイトでアカウントを作成し、ダッシュボードから「公開可能キー」と「シークレットキー」を取得します。
+
+2.Dockerコンテナ内にアクセス
+```
+docker-compose exec php bash
+```
+
+3.Laravelのパッケージインストール
+```
+composer require stripe/stripe-php
+```
+
+4..envファイルの環境変数の設定  
+Stripeダッシュボードから取得した「公開可能キー」と「シークレットキー」を設定します。
+```
+STRIPE_KEY=your-publishable-key
+STRIPE_SECRET=your-secret-key
+```
+
+5.Stripeのサービス設定  
+サービス設定ファイル (config/services.php) にStripeの情報を追加します。
+```
+'stripe' => [
+    'key' => env('STRIPE_KEY'),
+    'secret' => env('STRIPE_SECRET'),
+],
+```
+
+### 利用方法
+Stripe のテストモードを使用する場合、以下のカード情報を使用して動作確認を行うことができます。
+- カード番号: 4242 4242 4242 4242
+- 有効期限: 任意の未来の日付 (例: 12/32)
+- セキュリティコード: 任意の3桁 (例: 123)
+
 ## ダミーデータの説明
 ユーザー一覧  
 1.管理者　　　email: admin@admin.com  
