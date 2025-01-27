@@ -203,17 +203,32 @@ default-time-zone = 'Asia/Tokyo'
 
 ## Laravel環境開発
 
-1.docker-compose exec php bash
+1.Dockerコンテナ内にアクセス
+```
+docker-compose exec php bash
+```
 
-2.composer install
+2.composerのインストール
+```
+composer install
+```
 
 3..env.exampleファイルから.envを作成し、環境変数を変更
 
-4.php artisan key:generate
+4.アプリケーションキーの生成
+```
+php artisan key:generate
+```
 
-5.php artisan migrate
+5.マイグレーションの実行
+```
+php artisan migrate
+```
 
-6.php artisan db:seed
+6.シーディングの実行
+```
+php artisan db:seed
+```
 
 ## 環境別設定ファイルの使用
 このプロジェクトでは、環境別に設定ファイル（.env）を使用しています。
