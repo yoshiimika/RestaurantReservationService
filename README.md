@@ -299,7 +299,7 @@ your_mailtrap_username と your_mailtrap_password には、Mailtrap の認証情
 php artisan make:command SendReservationReminder
 ```
 
-2.カスタムコマンドの内容
+2.カスタムコマンドの内容  
 `app/Console/Commands/SendReservationReminder.php`ファイルに以下の内容を追加して下さい。
 ```
 <?php
@@ -333,7 +333,7 @@ class SendReservationReminder extends Command
 php artisan make:mail ReservationReminderEmail
 ```
 
-4.メールクラスの内容
+4.メールクラスの内容  
 `app/Mail/Commands/ReservationReminderEmail.php`ファイルに以下の内容を追加して下さい。
 ```
 <?php
