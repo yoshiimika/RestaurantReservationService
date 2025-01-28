@@ -294,7 +294,8 @@ your_mailtrap_username と your_mailtrap_password には、Mailtrap の認証情
 
 ### セットアップ方法
 
-1.カスタムコマンドの作成
+1.カスタムコマンドの作成  
+phpコンテナ内で以下のコマンドを実行して下さい。
 ```
 php artisan make:command SendReservationReminder
 ```
@@ -328,7 +329,8 @@ class SendReservationReminder extends Command
 }
 ```
 
-3.メールクラスの作成
+3.メールクラスの作成  
+phpコンテナ内で以下のコマンドを実行して下さい。
 ```
 php artisan make:mail ReservationReminderEmail
 ```
@@ -380,7 +382,7 @@ class ReservationReminderEmail extends Mailable
 ```
 
 6.タスクスケジューラーの設定  
-app/Console/Kernel.php の schedule メソッドに以下を追加して下さい。
+`app/Console/Kernel.php` の schedule メソッドに以下を追加して下さい。
 ```
 protected function schedule(Schedule $schedule)
 {
@@ -388,7 +390,16 @@ protected function schedule(Schedule $schedule)
 }
 ```
 
-7.Cronジョブの設定
+7.Cronジョブの設定  
+phpコンテナ内で以下のコマンドを実行し、crontabを開いて下さい。
+```
+crontab -e
+```
+以下の内容を追加して下さい。  
+```
+PATH=/usr/local/bin:/usr/bin:/bin
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /path-to-your-log/cron.log 2>&1
+```
 
 ## Stripeを使用した決済機能について
 このプロジェクトでは、Stripeを使用して決済機能を実装しています。  
