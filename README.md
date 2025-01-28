@@ -301,7 +301,7 @@ php artisan make:command SendReservationReminder
 ```
 
 2.カスタムコマンドの内容  
-`app/Console/Commands/SendReservationReminder.php`ファイルに以下の内容を追加して下さい。
+作成した`app/Console/Commands/SendReservationReminder.php`ファイルに以下の内容を追加して下さい。
 ```
 <?php
 
@@ -336,7 +336,7 @@ php artisan make:mail ReservationReminderEmail
 ```
 
 4.メールクラスの内容  
-`app/Mail/Commands/ReservationReminderEmail.php`ファイルに以下の内容を追加して下さい。
+作成した`app/Mail/Commands/ReservationReminderEmail.php`ファイルに以下の内容を追加して下さい。
 ```
 <?php
 
