@@ -360,9 +360,33 @@ class ReservationReminderEmail extends Mailable
 }
 ```
 
-5.メールテンプレートの作成
+5.メールテンプレートの作成  
+`resources/views/emails/reservation-reminder.blade.php`ファイルを新規作成し、以下の内容を追加して下さい。
+```
+@component('mail::message')
+# 予約リマインダーメール
 
-6.タスクスケジューラーの設定
+{{ $reservation->user->name }} 様<br>
+本日以下の内容で予約を受け付けています。
+
+- 店舗名: {{ $reservation->shop->name }}
+- 日付: {{ $reservation->date }}
+- 時間: {{ \Carbon\Carbon::parse($reservation->time)->format('H:i') }}
+- 人数: {{ $reservation->number }}人
+
+ご来店お待ちしております。
+
+@endcomponent
+```
+
+6.タスクスケジューラーの設定  
+app/Console/Kernel.php の schedule メソッドに以下を追加して下さい。
+```
+protected function schedule(Schedule $schedule)
+{
+    $schedule->command('reservation:send-reminder')->dailyAt('08:00');
+}
+```
 
 7.Cronジョブの設定
 
