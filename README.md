@@ -401,6 +401,12 @@ PATH=/usr/local/bin:/usr/bin:/bin
 * * * * * cd /path-to-your-project && php artisan schedule:run >> /path-to-your-log/cron.log 2>&1
 ```
 
+8.動作確認  
+phpコンテナ内で以下のコマンドを実行することで、リマインドメール送信を手動で実行できます。
+```
+php artisan reservation:send-reminder
+```
+
 ## Stripeを使用した決済機能について
 このプロジェクトでは、Stripeを使用して決済機能を実装しています。  
 以下にセットアップ方法や利用方法を記載します。
