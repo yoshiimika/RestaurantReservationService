@@ -457,6 +457,17 @@ Stripe のテストモードを使用する場合、以下のカード情報を�
 
 ### セットアップ方法
 1.GD拡張機能の有効化
+Dockerfile に以下を追記し、PHPのGD拡張をインストールして下さい。
+```
+RUN apt update \
+    && docker-php-ext-install pdo_mysql zip gd
+```
+Dockerfile を更新した後、以下のコマンドでコンテナを再ビルドして下さい。
+```
+docker-compose down
+docker-compose up --build
+```
+
 2.QRコードパッケージのインストール
 3. QRコードをコマンドで生成
 4. メールクラスの作成
